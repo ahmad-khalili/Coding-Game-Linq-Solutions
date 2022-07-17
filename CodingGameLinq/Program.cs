@@ -85,4 +85,17 @@ public static class Program
     {
         return words.Where(word => word.Length < 4).Distinct();
     }
+    
+    // Exercise 8 (OrderBy Exercise):
+    // In the following exercise, try to sort all the input names by Last, in descending order.
+    /* public interface IName
+    {
+        string First { get; }
+        string Middle { get; }
+        string Last { get; }
+    }*/
+    public static IEnumerable<IName> SortNames(IEnumerable<IName> names)
+    {
+        return names.OrderByDescending(name => name.Last);
+    }
 }
