@@ -15,4 +15,10 @@ public static class Program
         PrintAnswer(func("my baby"));
         PrintAnswer(func("my honey"));
     }
+    
+    // Exercise 2 (Delegate Variable Exercise):
+    // In this exercise, you must use either a method delegate or a lambda expression to
+    // define the HelloFunc variable such that it produces the desired results.
+    // The required delegate takes a single string argument and returns a string result.
+    public static readonly SayHello HelloFunc = (str) => $"Hello, {str}!";
 }
