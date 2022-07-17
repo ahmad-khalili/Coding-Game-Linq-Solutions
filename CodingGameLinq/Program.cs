@@ -136,4 +136,18 @@ public static class Program
     {
         return words.Aggregate(0, (count, val) => count + val.Length);
     }
+    
+    // Exercise 13 (Select Exercise):
+    // In this exercise, try to return a sequence of strings that
+    // consist of the provided names in the form: "<Last>, <First>".
+    /* public interface IName
+    {
+        string First { get; }
+        string Middle { get; }
+        string Last { get; }
+    }*/
+    public static IEnumerable<string> DisplayStringsForNames(IEnumerable<IName> names)
+    {
+        return names.Select(name => $"{name.Last}, {name.First}");
+    }
 }
