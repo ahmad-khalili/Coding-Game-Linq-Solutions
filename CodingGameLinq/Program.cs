@@ -98,4 +98,19 @@ public static class Program
     {
         return names.OrderByDescending(name => name.Last);
     }
+    
+    // Exercise 9 (ThenBy Exercise):
+    // In the following exercise, try to order all the input names by Last. If any names have the same value for Last,
+    // then they should be ordered by First.
+    // If any have matching Last and First, then they should be ordered by Middle.
+    /* public interface IName
+    {
+        string First { get; }
+        string Middle { get; }
+        string Last { get; }
+    }*/
+    public static IEnumerable<IName> SortNames(IEnumerable<IName> names)
+    {
+        return names.OrderBy(name => name.Last).ThenBy(name => name.First).ThenBy(name => name.Middle);
+    }
 }
