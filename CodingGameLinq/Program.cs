@@ -21,4 +21,24 @@ public static class Program
     // define the HelloFunc variable such that it produces the desired results.
     // The required delegate takes a single string argument and returns a string result.
     public static readonly SayHello HelloFunc = (str) => $"Hello, {str}!";
+    
+    // Exercise 3 (Delegate Parameters Exercise):
+    // In this exercise, you must pass either a method delegate or a lambda expression to the
+    // TestSayHello() method in order to produce the desired result.
+    // The delegate parameter takes a single string argument and returns a string result.
+    public static SayHello TestSayHello(SayHello func)
+    {
+        return func;
+    }
+    public static void DoSayHello()
+    {
+        // Uncomment the call to TestSayHello() 
+        //
+        // The method Exercise.TestSayHello() takes a
+        // SayHello delegate as input. Pass it a delegate
+        // method that, when given a string "foo", will
+        // return the string "Hello, foo!".
+
+        TestSayHello(str => $"Hello, {str}!");
+    }
 }
