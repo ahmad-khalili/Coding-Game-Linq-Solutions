@@ -17,4 +17,17 @@ public static class Program
             orderby value
             select value;
     }
+    
+    // Exercise 3 (Method Syntax Exercise):
+    // This is the exact same exercise as in the previous lesson. Now try to write it with method syntax.
+    // The following code shows a LINQ query that returns the input inValues unmodified. Using the format of the
+    // example above, see if you can return only the strings that have
+    // pattern in them (using the String.Contains() method) and order the list alphabetically.
+    public static IEnumerable<string> FilterAndSortMethod(IEnumerable<string> inValues, string pattern)
+    {
+        return inValues
+                .Where(value => value.Contains(pattern))
+                .OrderBy(value => value)
+            ;
+    }
 }
