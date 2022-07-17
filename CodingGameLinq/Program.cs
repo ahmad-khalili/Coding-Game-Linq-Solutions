@@ -150,4 +150,16 @@ public static class Program
     {
         return names.Select(name => $"{name.Last}, {name.First}");
     }
+    
+    // Exercise 14 (Combined Exercise 1):
+    // In this exercise, combine LINQ method calls together to determine if the second sequence passed
+    // into the TestForSquares() method contains the squares of the elements in the first sequence.
+    // It should return true if the two sequences have the same number of elements and each element in squares
+    // is equal to the square of the corresponding element in numbers.
+    public static bool TestForSquares(IEnumerable<int> numbers, IEnumerable<int> squares)
+    {
+        return squares
+                .SequenceEqual(numbers.Select(number => number * number))
+            ;
+    }
 }
