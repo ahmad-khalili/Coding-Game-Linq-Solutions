@@ -128,4 +128,12 @@ public static class Program
     {
         return words.Min(word => word.Length);
     }
+    
+    // Exercise 12 (Aggregate Exercise):
+    // Think you can handle it? Try to use Aggregate() to write a method that will return the total
+    // number of characters in all the words in the source sequence.
+    public static int TotalCharactersInSequence(IEnumerable<string> words)
+    {
+        return words.Aggregate(0, (count, val) => count + val.Length);
+    }
 }
