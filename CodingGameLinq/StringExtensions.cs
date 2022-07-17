@@ -20,4 +20,33 @@ public static class StringExtensions
             return str + "s";
         }
     }
+    
+    // Exercise 8 (Putting It Together Exercise):
+    /* LINQ Select() method
+    One of the more commonly used methods in LINQ is the Select() method. 
+    Select() is an extension method to the IEnumerable<T> interface. 
+    It is analogous to the map() method found in many other programming languages.
+
+    Select() takes each element, one-at-a-time, from a source IEnumerable<T> sequence, 
+    applies a delegate function to the elements, and then returns an IEnumerable<U> result.
+
+    NOTE: The type inside the collection can change, hence the change from IEnumerable<T> to IEnumerable<U>.
+
+    Implement a Transform() method
+    In order to avoid the complications of dealing with generics in this exercise, 
+    let's limit the extension method to only work with IEnumerable<int>. Here is what you need to do:
+
+    - Implement an extension to IEnumerable<int> called Transform()
+    - The Transform() method should accept, as a parameter, a delegate that takes an int input and returns an int output
+    - The Transform() method should be a generator that iterates through the input IEnumerable<int>,
+      applies the delegate to each value, and yield returns the result
+    - The Transform() should return an IEnumerable<int> output
+    */
+    public delegate int TransformationFunction(int num);
+    public static IEnumerable<int> Transform(this IEnumerable<int> collection, TransformationFunction func){
+        foreach(var item in collection){
+            var newItem = func(item);
+            yield return newItem;
+        }
+    }
 }
