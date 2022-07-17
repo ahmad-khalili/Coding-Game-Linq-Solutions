@@ -113,4 +113,11 @@ public static class Program
     {
         return names.OrderBy(name => name.Last).ThenBy(name => name.First).ThenBy(name => name.Middle);
     }
+    
+    // Exercise 10 (Count Exercise):
+    // In the following exercise, count the number of strings in the provided sequence that begin with the provided string.
+    public static int NumberThatStartWith(IEnumerable<string> words, string startString)
+    {
+        return words.Count(word => word.StartsWith(startString));
+    }
 }
