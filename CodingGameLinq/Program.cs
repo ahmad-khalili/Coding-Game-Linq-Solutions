@@ -76,4 +76,13 @@ public static class Program
     {
         return words.SkipWhile(word => word != "start").TakeWhile(word => word != "end");
     }
+    
+    // Exercise 7 (Distinct, Intersect, and Where Exercise):
+    // In this exercise, make the GetDistinctShortWords() method return the words from the
+    // provided sequence that have fewer than four letters in them and are distinct.
+    public static IEnumerable<string> GetDistinctShortWords(
+        IEnumerable<string> words)
+    {
+        return words.Where(word => word.Length < 4).Distinct();
+    }
 }
