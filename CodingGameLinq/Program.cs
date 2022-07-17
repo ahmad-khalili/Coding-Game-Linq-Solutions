@@ -59,4 +59,13 @@ public static class Program
     {
         return words.LastOrDefault();
     }
+    
+    // Exercise 5 (Take & Skip Exercise):
+    // In this exercise, make the GetThirdFourthFifthItems() method return the 3rd, 4th, and
+    // 5th elements of the provided sequence.
+    public static IEnumerable<string> GetThirdFourthFifthItems(
+        IEnumerable<string> words)
+    {
+        return words.Skip(2).Take(3);
+    }
 }
