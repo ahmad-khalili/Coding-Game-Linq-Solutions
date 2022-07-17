@@ -120,4 +120,12 @@ public static class Program
     {
         return words.Count(word => word.StartsWith(startString));
     }
+    
+    // Exercise 11 (Min / Max Exercise):
+    // In the following exercise, write a method that will return the length of
+    // the shortest string in the provided sequence as an integer value.
+    public static int LengthOfShortestWord(IEnumerable<string> words)
+    {
+        return words.Min(word => word.Length);
+    }
 }
