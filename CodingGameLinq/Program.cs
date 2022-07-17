@@ -42,5 +42,21 @@ public static class Program
         TestSayHello(str => $"Hello, {str}!");
     }
     
-    
+    // Exercise 6 (Unbounded Generator Exercise):
+    // See if you can write your own generator method that implements the following sequence:
+    /* Alternate between adding 2 to the previous number, then multiplying the previous number by 2.
+     Here are the first several values in this sequence:
+     0+2, 2x2, 4+2, 6x2, 12+2, 14x2, 28+2, 30x2, 60+2 ...
+     = 2,   4,   6,   12,  14,   28,   30,   60,   62 ...
+    */
+    public static IEnumerable<int> AddTwoThenDouble(){
+        int latestValue = 0;
+        bool isAdd = true;
+            
+        while (true) {
+            latestValue = (isAdd ? latestValue + 2 : latestValue * 2);
+            isAdd = !isAdd;
+            yield return latestValue;
+        }
+    }
 }
