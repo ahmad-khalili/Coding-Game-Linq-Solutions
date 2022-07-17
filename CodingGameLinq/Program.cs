@@ -68,4 +68,12 @@ public static class Program
     {
         return words.Skip(2).Take(3);
     }
+    
+    // Exercise 6 (TakeWhile and SkipWhile Exercise):
+    // In this exercise, make the GetStartThroughEnd() method return all the words from the provided
+    // sequence that occur between the words "start" (inclusive) and "end" (non-inclusive).
+    public static IEnumerable<string> GetStartThroughEnd(IEnumerable<string> words)
+    {
+        return words.SkipWhile(word => word != "start").TakeWhile(word => word != "end");
+    }
 }
